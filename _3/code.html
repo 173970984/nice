@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed": "#1a1b1f",
+                        "surface-container-highest": "#e2e2e4",
+                        "surface-variant": "#e2e2e4",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary": "#e2e2e7",
+                        "inverse-on-surface": "#f0f0f2",
+                        "surface-tint": "#5e5e5e",
+                        "on-background": "#1a1c1d",
+                        "on-tertiary-container": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d9dadc",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "surface-container": "#eeeef0",
+                        "primary-fixed-dim": "#474747",
+                        "inverse-primary": "#c6c6c6",
+                        "tertiary-container": "#737479",
+                        "on-primary": "#e2e2e2",
+                        "on-surface-variant": "#474747",
+                        "on-tertiary-fixed-variant": "#e2e2e7",
+                        "outline-variant": "#c6c6c6",
+                        "outline": "#777777",
+                        "surface-container-low": "#f3f3f5",
+                        "secondary": "#5e5e63",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#1a1b1f",
+                        "surface": "#f9f9fb",
+                        "primary-fixed": "#5e5e5e",
+                        "surface-bright": "#f9f9fb",
+                        "tertiary-fixed": "#5d5e63",
+                        "on-surface": "#1a1c1d",
+                        "on-tertiary-fixed": "#ffffff",
+                        "on-error-container": "#410002",
+                        "secondary-fixed": "#c7c6cb",
+                        "background": "#f9f9fb",
+                        "on-error": "#ffffff",
+                        "tertiary": "#3a3b3f",
+                        "secondary-fixed-dim": "#ababb0",
+                        "primary-container": "#3b3b3b",
+                        "on-primary-container": "#ffffff",
+                        "surface-container-high": "#e8e8ea",
+                        "secondary-container": "#d5d4d9",
+                        "tertiary-fixed-dim": "#45474b",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#3a3b40",
+                        "on-primary-fixed": "#ffffff",
+                        "inverse-surface": "#2f3132"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9fb;
+            color: #1a1c1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .executive-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 5rem;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .phase-connector {
+            position: absolute;
+            left: 0;
+            top: 2.5rem;
+            bottom: -2.5rem;
+            width: 1px;
+            background: rgba(0,0,0,0.1);
+        }
+        .nav-dropdown:hover .nav-dropdown-menu {
+            display: block;
+        }
+        .nav-sub-dropdown:hover .nav-sub-dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 border-b border-neutral-100 dark:border-neutral-900 bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-8 md:px-16 max-w-[1920px] mx-auto"><div class="text-xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-50 cursor-pointer active:scale-95 transition-transform">N1CE DESIGN</div>
+<div class="hidden md:flex gap-10 items-center font-sans antialiased tracking-tight text-sm font-medium">
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">首页</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">个人介绍</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">工作经历</a>
+<a class="text-neutral-900 dark:text-neutral-50 border-b-2 border-neutral-900 dark:border-neutral-50 pb-1" href="#">作品案例</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">联系方式</a>
+</div>
+<button class="bg-black text-white dark:bg-white dark:text-black px-6 py-2 rounded-md font-medium text-sm hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+    Contact
+</button></div>
+</nav>
+<main class="pt-32 max-w-screen-2xl mx-auto">
+<!-- Part 1: Background Information -->
+<div class="px-8 mb-32">
+<!-- Executive Breadcrumb -->
+<div class="mb-12">
+<span class="text-[0.75rem] font-semibold tracking-[0.05em] uppercase text-secondary">CASE STUDY</span>
+<span class="mx-3 text-outline-variant opacity-30">/</span>
+<span class="text-[0.75rem] font-semibold tracking-[0.05em] uppercase text-primary">BACKGROUND</span>
+</div>
+<!-- Header Section -->
+<header class="mb-20">
+<h1 class="text-[3.5rem] font-bold tracking-[-0.04em] leading-[1.1] text-primary mb-6">熟醉奄仔蟹快消型品项目案例</h1>
+<p class="text-[1.125rem] text-secondary font-medium tracking-[-0.01em] leading-[1.4] max-w-2xl">从地域饮食洞察到高客单礼赠爆品的完整打造</p>
+</header>
+<!-- Metadata Row -->
+<div class="w-full h-px bg-outline-variant opacity-20 mb-10"></div>
+<div class="flex flex-wrap gap-x-12 gap-y-6 mb-20">
+<div class="flex flex-col gap-1">
+<span class="text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-secondary">品项名</span>
+<span class="text-[0.875rem] font-medium text-primary">熟醉奄仔蟹</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-secondary">所属企业</span>
+<span class="text-[0.875rem] font-medium text-primary">广州某点餐饮管理有限公司</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-secondary">类型</span>
+<span class="text-[0.875rem] font-medium text-primary">餐饮零售 / 礼赠品项策划</span>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="executive-grid items-start">
+<div class="flex flex-col gap-24">
+<section class="relative">
+<div class="flex items-baseline gap-4 mb-6">
+<span class="text-[0.75rem] font-bold text-primary opacity-30">01</span>
+<h2 class="text-[1.75rem] font-medium tracking-[-0.02em] text-primary">项目背景</h2>
+</div>
+<div class="pl-10 border-l border-outline-variant/20">
+<p class="text-[0.875rem] leading-[1.8] text-on-surface-variant max-w-xl">基于广州、深圳、佛山等地区客群对海鲜消费的高接受度，以及蟹类产品在高客单价场景中的天然价值认知，策划打造兼具自食、送礼与宴会使用场景的高端熟醉蟹品项。</p>
+</div>
+</section>
+<section class="relative">
+<div class="flex items-baseline gap-4 mb-6">
+<span class="text-[0.75rem] font-bold text-primary opacity-30">02</span>
+<h2 class="text-[1.75rem] font-medium tracking-[-0.02em] text-primary">市场机会</h2>
+</div>
+<div class="pl-10 border-l border-outline-variant/20">
+<p class="text-[0.875rem] leading-[1.8] text-on-surface-variant max-w-xl">高端消费者对“产品品质与价格对等”的认知较强，蟹类具备较高礼赠接受度与复购可能；同时，开袋即食的便捷体验，更适合礼域销售、宴会引流与节庆礼赠场景。</p>
+</div>
+</section>
+</div>
+<div class="sticky top-40">
+<div class="bg-surface-container-low rounded-lg aspect-[4/3] overflow-hidden flex items-center justify-center group relative">
+<img alt="Project Background Visual" class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiChUcgwxmF5oGlQPxKzqM4J6LH-4rXt-Xa8VMY5ArlTQ0Rdby7g_o0W95XNRWQIWnRafuu40_b43d5Gxm1VVIqvRkzm5iL7va03QWdxxG7DjanwjdUVql__BpNE0IQiDlIuWehhEGHzXU4ESfU_6EyAyCssFwHCbsacfQ62IMvn4XKh-p_Pm0vvTWGyRtjS3PtJBIJH5nDeYKRYhA28Ezlzd5Z1EepFOOMO-Z43upCs6w0IA4fgjxOw0kPWcUbJQwtR_H4wFwf8o"/>
+<div class="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+<span class="text-[0.65rem] font-semibold tracking-widest uppercase text-white/70">Concept Visual 01</span>
+<div class="h-8 w-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-white">expand_content</span>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<p class="text-[0.75rem] text-secondary italic">* 熟醉奄仔蟹产品原型及包装视觉概念图（方案执行前）</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Part 2: Strategic Content -->
+<div class="px-8 pt-24 pb-24 border-t border-outline-variant/20">
+<header class="mb-20">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-secondary">STRATEGY</span>
+<div class="w-12 h-px bg-outline-variant/40"></div>
+</div>
+<h2 class="text-[4rem] font-bold tracking-[-0.04em] leading-[1.1] text-primary max-w-4xl">开袋即食<br/>让“宴会级”菜品进入家宴场景</h2>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant/20 border border-outline-variant/20 rounded-xl overflow-hidden">
+<!-- Strategic Card 01 -->
+<div class="bg-white p-16 flex flex-col min-h-[400px]">
+<span class="text-[3.5rem] font-bold text-zinc-100 mb-8 leading-none">01</span>
+<h3 class="text-[1.5rem] font-bold text-primary mb-12">原料差异化</h3>
+<div class="mt-auto">
+<p class="text-on-surface-variant text-[1.125rem] mb-6">选用中国台州未受精处女蟹作为核心原料，强化品质基础与产品稀缺感。</p>
+<span class="text-[0.65rem] font-semibold tracking-widest uppercase text-secondary">PREMIUM SOURCING</span>
+</div>
+</div>
+<!-- Strategic Card 02 -->
+<div class="bg-zinc-50 p-16 flex flex-col min-h-[400px]">
+<span class="text-[3.5rem] font-bold text-zinc-200 mb-8 leading-none">02</span>
+<h3 class="text-[1.5rem] font-bold text-primary mb-12">风味独家化</h3>
+<div class="mt-auto">
+<p class="text-on-surface-variant text-[1.125rem] mb-6">以花雕酒、茅台、青花椒等进行熟醉腌制，形成更具辨识度的独家风味体系。</p>
+<span class="text-[0.65rem] font-semibold tracking-widest uppercase text-secondary">SIGNATURE FLAVOR</span>
+</div>
+</div>
+<!-- Strategic Card 03 -->
+<div class="bg-zinc-50 p-16 flex flex-col min-h-[400px]">
+<span class="text-[3.5rem] font-bold text-zinc-200 mb-8 leading-none">03</span>
+<h3 class="text-[1.5rem] font-bold text-primary mb-12">场景双驱动</h3>
+<div class="mt-auto">
+<p class="text-on-surface-variant text-[1.125rem] mb-6">通过线上宣传与线下宴会菜品体验联动，实现“先体验、后购买”的高效转化。</p>
+<span class="text-[0.65rem] font-semibold tracking-widest uppercase text-secondary">OMNI-CHANNEL EXPERIENCE</span>
+</div>
+</div>
+<!-- Strategic Card 04 -->
+<div class="bg-white p-16 flex flex-col min-h-[400px]">
+<span class="text-[3.5rem] font-bold text-zinc-100 mb-8 leading-none">04</span>
+<h3 class="text-[1.5rem] font-bold text-primary mb-12">包装高端化</h3>
+<div class="mt-auto">
+<p class="text-on-surface-variant text-[1.125rem] mb-6">以极简、高端、便携为包装核心，打造兼顾自用与礼赠场景的品牌化生鲜包装体验。</p>
+<span class="text-[0.65rem] font-semibold tracking-widest uppercase text-secondary">LUXE PACKAGING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Part 3: Project Process -->
+<div class="px-8 pt-24 pb-24 border-t border-outline-variant/20">
+<header class="mb-20">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[0.75rem] font-semibold tracking-[0.2em] uppercase text-secondary">PROCESS</span>
+<div class="w-12 h-px bg-outline-variant/40"></div>
+</div>
+<h2 class="text-[4rem] font-bold tracking-[-0.04em] leading-[1.1] text-primary">项目过程与成果</h2>
+</header>
+<div class="mb-32">
+<h3 class="text-[1.5rem] font-medium text-primary mb-16 flex items-center gap-4">
+                    项目过程 <span class="text-secondary/30 font-normal">Project Process</span>
+</h3>
+<div class="flex flex-col gap-8 max-w-4xl">
+<!-- Phase 01 -->
+<div class="relative pl-12 group">
+<div class="phase-connector"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-white group-last:bg-primary"></div>
+<div class="bg-surface-container-low p-10 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50">
+<div class="flex items-center gap-6 mb-4">
+<span class="text-[0.7rem] font-bold tracking-widest uppercase py-1 px-3 bg-white rounded border border-outline-variant/20">Phase 01</span>
+<h4 class="text-[1.25rem] font-bold text-primary">市场与客群判断</h4>
+</div>
+<p class="text-[0.875rem] text-on-surface-variant leading-[1.8]">基于华南高净值客群消费偏好，确认以“蟹”作为高客单、高认知、高礼赠属性的核心品项方向。</p>
+</div>
+</div>
+<!-- Phase 02 -->
+<div class="relative pl-12 group">
+<div class="phase-connector"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-white"></div>
+<div class="bg-surface-container-low p-10 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50">
+<div class="flex items-center gap-6 mb-4">
+<span class="text-[0.7rem] font-bold tracking-widest uppercase py-1 px-3 bg-white rounded border border-outline-variant/20">Phase 02</span>
+<h4 class="text-[1.25rem] font-bold text-primary">产品开发</h4>
+</div>
+<p class="text-[0.875rem] text-on-surface-variant leading-[1.8]">从选蟹标准、醉制配方到风味测试，逐步打磨熟醉奄仔蟹的口味体系与产品标准。</p>
+</div>
+</div>
+<!-- Phase 03 -->
+<div class="relative pl-12 group">
+<div class="phase-connector"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-white"></div>
+<div class="bg-surface-container-low p-10 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50">
+<div class="flex items-center gap-6 mb-4">
+<span class="text-[0.7rem] font-bold tracking-widest uppercase py-1 px-3 bg-white rounded border border-outline-variant/20">Phase 03</span>
+<h4 class="text-[1.25rem] font-bold text-primary">供应链落地</h4>
+</div>
+<p class="text-[0.875rem] text-on-surface-variant leading-[1.8]">完成工厂对接、批量生产与品控流程建立，推动自研产品进入可复制销售阶段。</p>
+</div>
+</div>
+<!-- Phase 04 -->
+<div class="relative pl-12 group">
+<div class="phase-connector"></div>
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-white"></div>
+<div class="bg-surface-container-low p-10 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50">
+<div class="flex items-center gap-6 mb-4">
+<span class="text-[0.7rem] font-bold tracking-widest uppercase py-1 px-3 bg-white rounded border border-outline-variant/20">Phase 04</span>
+<h4 class="text-[1.25rem] font-bold text-primary">包装与传播</h4>
+</div>
+<p class="text-[0.875rem] text-on-surface-variant leading-[1.8]">同步完成包装设计、宣传物料与线上线下销售内容搭建，形成完整上市表达。</p>
+</div>
+</div>
+<!-- Phase 05 -->
+<div class="relative pl-12 group">
+<div class="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary ring-4 ring-white"></div>
+<div class="bg-surface-container-low p-10 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-zinc-200/50">
+<div class="flex items-center gap-6 mb-4">
+<span class="text-[0.7rem] font-bold tracking-widest uppercase py-1 px-3 bg-white rounded border border-outline-variant/20">Phase 05</span>
+<h4 class="text-[1.25rem] font-bold text-primary">场景验证</h4>
+</div>
+<p class="text-[0.875rem] text-on-surface-variant leading-[1.8]">通过私域商城销售与高端宴会使用双场景联动，引导客户试吃、复购与企业礼盒定制采购。</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Part 4: Strategic Outcomes -->
+<div>
+<h3 class="text-[1.5rem] font-medium text-primary mb-16 flex items-center gap-4">
+                    核心成果 <span class="text-secondary/30 font-normal">Strategic Outcomes</span>
+</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white p-12 rounded-xl border border-outline-variant/20">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-secondary block mb-6">PRICING STRATEGY</span>
+<div class="text-[3rem] font-bold text-primary mb-2">298元</div>
+<p class="text-secondary text-[0.875rem]">最低定价 / 2只</p>
+</div>
+<div class="bg-primary p-12 rounded-xl text-on-primary shadow-xl">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase opacity-60 block mb-6">PERFORMANCE</span>
+<div class="text-[3rem] font-bold mb-2">80万+</div>
+<p class="opacity-60 text-[0.875rem]">首月销售额</p>
+</div>
+<div class="bg-white p-12 rounded-xl border border-outline-variant/20">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-secondary block mb-6">EFFICIENCY</span>
+<div class="text-[3rem] font-bold text-primary mb-2">高复购</div>
+<p class="text-secondary text-[0.875rem]">开袋即食提升购买与复购效率</p>
+</div>
+<div class="bg-white p-12 rounded-xl border border-outline-variant/20">
+<span class="text-[0.65rem] font-bold tracking-widest uppercase text-secondary block mb-6">MARKET CHANNEL</span>
+<div class="text-[3rem] font-bold text-primary mb-2">企业定制</div>
+<p class="text-secondary text-[0.875rem]">成为节日礼盒与福利采购定制品项</p>
+</div>
+</div>
+<div class="mt-32 pt-16 border-t border-outline-variant/20">
+<p class="text-[1.5rem] font-medium text-primary leading-[1.6] max-w-4xl mb-16">
+                        该品项完成了从创意策划、供应链打磨、包装表达，到线上线下联动销售的完整闭环验证。
+                    </p>
+<div class="flex gap-20">
+<div class="flex flex-col gap-1">
+<span class="text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-secondary">STRATEGY LEAD</span>
+<span class="text-[0.875rem] font-medium text-primary">Meijia Gongshi Team</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[0.7rem] font-semibold tracking-[0.05em] uppercase text-secondary">YEAR</span>
+<span class="text-[0.875rem] font-medium text-primary">2024</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-neutral-50 dark:bg-neutral-950 font-sans text-xs uppercase tracking-widest">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1920px] mx-auto w-full px-8 md:px-16 border-t border-neutral-100 dark:border-neutral-900 pt-12">
+<div class="flex flex-col gap-1 leading-tight text-neutral-400 dark:text-neutral-600">
+<div class="font-bold text-neutral-900 dark:text-neutral-50 mb-2">
+                    NIHAOSHENG — PORTFOLIO 2026
+                </div>
+<div class="font-normal lowercase">
+                    © 2026 NHS. 个人作品案例展示
+                </div>
+</div>
+<div class="mt-8 md:mt-0 flex gap-8">
+<a class="text-neutral-400 dark:text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors" href="#">Privacy Policy</a>
+<a class="text-neutral-400 dark:text-neutral-600 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors" href="#">Terms of Service</a>
+<a class="bg-neutral-900 text-white dark:bg-neutral-50 dark:text-neutral-950 px-5 py-3 rounded-lg flex items-center gap-2 font-bold opacity-80 hover:opacity-100 transition-opacity uppercase tracking-wider" href="#">
+<span class="text-base leading-none">↑</span>
+<span>回到顶部</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

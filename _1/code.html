@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container": "#eeeef0",
+                        "primary": "#000000",
+                        "on-tertiary": "#e2e2e7",
+                        "primary-fixed-dim": "#474747",
+                        "tertiary-fixed-dim": "#45474b",
+                        "secondary-fixed-dim": "#ababb0",
+                        "on-secondary-fixed-variant": "#3a3b40",
+                        "tertiary-container": "#737479",
+                        "surface-bright": "#f9f9fb",
+                        "primary-container": "#3b3b3b",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e8e8ea",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c6c6c6",
+                        "outline": "#777777",
+                        "on-error-container": "#410002",
+                        "on-secondary-container": "#1a1b1f",
+                        "background": "#f9f9fb",
+                        "surface-container-low": "#f3f3f5",
+                        "primary-fixed": "#5e5e5e",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2f3132",
+                        "on-background": "#1a1c1d",
+                        "surface-container-highest": "#e2e2e4",
+                        "secondary-container": "#d5d4d9",
+                        "on-surface-variant": "#474747",
+                        "surface-tint": "#5e5e5e",
+                        "surface-variant": "#e2e2e4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffffff",
+                        "on-primary": "#e2e2e2",
+                        "inverse-primary": "#c6c6c6",
+                        "inverse-on-surface": "#f0f0f2",
+                        "tertiary-fixed": "#5d5e63",
+                        "on-primary-container": "#ffffff",
+                        "on-primary-fixed": "#ffffff",
+                        "tertiary": "#3a3b3f",
+                        "on-tertiary-fixed": "#ffffff",
+                        "on-secondary-fixed": "#1a1b1f",
+                        "secondary-fixed": "#c7c6cb",
+                        "on-tertiary-fixed-variant": "#e2e2e7",
+                        "surface": "#f9f9fb",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d9dadc",
+                        "on-surface": "#1a1c1d",
+                        "secondary": "#5e5e63",
+                        "on-primary-fixed-variant": "#e2e2e2",
+                        "brand-gold": "#d4af37"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #f9f9fb;
+            color: #1a1c1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .roadmap-card {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .roadmap-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+        .result-card {
+            background: #ffffff;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .result-card:hover {
+            transform: translateY(-8px);
+        }
+        /* Custom dropdown styles for TopNavBar */
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-submenu:hover .submenu-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-primary selection:text-white overflow-x-hidden min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-900 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-8 md:px-16 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-50 cursor-pointer active:scale-95 transition-transform">N1CE DESIGN</div>
+<nav class="flex gap-8 items-center font-sans antialiased tracking-tight text-sm font-medium"><a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">首页</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">个人介绍</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">工作经历</a>
+<a class="text-neutral-900 dark:text-neutral-50 border-b-2 border-neutral-900 dark:border-neutral-50 pb-1 cursor-pointer" href="#">作品案例</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">联系方式</a></nav>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center pt-24">
+<!-- Section 1: Overview (Background/Pain Points/Goals) -->
+<section class="max-w-6xl w-full px-12 pt-16 relative overflow-visible">
+<!-- Background Decor -->
+<div class="absolute -top-[10%] -right-[5%] w-[40%] h-[80%] bg-surface-container-low rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
+<div class="text-center mb-24 relative z-10">
+<nav class="mb-12 inline-flex items-center gap-2">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">CASE 02</span>
+<span class="w-4 h-[1px] bg-outline-variant/30"></span>
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">BACKGROUND</span>
+</nav>
+<h1 class="text-[3.5rem] font-bold tracking-[-0.04em] leading-[1.1] mb-6 text-primary">美佳时宴 品牌案例</h1>
+<p class="text-[1.75rem] font-medium tracking-[-0.02em] leading-[1.2] text-on-surface-variant mb-8 max-w-3xl mx-auto">
+                餐饮服务的差异化定位
+            </p>
+<div class="flex justify-center items-center gap-6 py-4 px-8 bg-surface-container-lowest/50 rounded-full inline-flex mx-auto shadow-sm backdrop-blur-sm">
+<span class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant">广州康点餐饮管理有限公司</span>
+<span class="text-outline-variant opacity-30">|</span>
+<span class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant">高端餐饮</span>
+<span class="text-outline-variant opacity-30">|</span>
+<span class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-on-surface-variant">2020</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-24 relative z-10 mb-32">
+<!-- Brand Pain Points -->
+<div class="flex flex-col">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-lg font-semibold tracking-[-0.01em] text-primary">品牌痛点</h2>
+<div class="flex-1 h-[1px] bg-brand-gold/30"></div>
+</div>
+<ul class="space-y-8">
+<li class="flex items-start gap-4">
+<span class="text-[0.75rem] font-bold text-secondary mt-1 tracking-tighter">01</span>
+<div class="space-y-1">
+<h3 class="text-[1rem] font-semibold text-on-surface">品牌建设缺失</h3>
+<p class="text-sm text-secondary leading-relaxed">缺乏统一的品牌识别与应用规范，终端呈现长期处于分散、临时、非系统化状态。</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-[0.75rem] font-bold text-secondary mt-1 tracking-tighter">02</span>
+<div class="space-y-1">
+<h3 class="text-[1rem] font-semibold text-on-surface">传统外餐服务同质化严重</h3>
+<p class="text-sm text-secondary leading-relaxed">缺乏统一视觉语言体系，各触点表达不连贯，品牌资产沉淀不足。</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-[0.75rem] font-bold text-secondary mt-1 tracking-tighter">03</span>
+<div class="space-y-1">
+<h3 class="text-[1rem] font-semibold text-on-surface">市场定位趋同</h3>
+<p class="text-sm text-secondary leading-relaxed">陷入低维功能竞争，未建立差异化的高端生活方式品牌认知。</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span class="text-[0.75rem] font-bold text-secondary mt-1 tracking-tighter">04</span>
+<div class="space-y-1">
+<h3 class="text-[1rem] font-semibold text-on-surface">产品叙事断裂</h3>
+<p class="text-sm text-secondary leading-relaxed">研发优势难以转化为用户可感知价值，品牌与终端用户之间存在沟通断层。</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Brand Goal -->
+<div class="flex flex-col">
+<div class="flex items-center gap-4 mb-8">
+<h2 class="text-lg font-semibold tracking-[-0.01em] text-primary">品牌目标</h2>
+<div class="flex-1 h-[1px] bg-brand-gold/30"></div>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-xl shadow-[0_20px_40px_rgba(26,28,29,0.04)] relative">
+<span class="material-symbols-outlined absolute -top-4 -right-4 text-primary bg-white p-2 rounded-full shadow-sm">restaurant_menu</span>
+<p class="text-[1.125rem] text-on-surface leading-[1.6] font-medium italic">打造“文化IP定制 + 商业圈层经济”的新概念餐饮品牌</p>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<p class="text-sm text-secondary leading-relaxed">
+                            通过品牌定位重构与服务价值重塑，建立清晰的高端餐饮认知；同步梳理品牌表达、产品与服务及IP化运营方向，推动品牌从传统外餐服务向具备差异化与复合能力的餐饮体系升级。
+                        </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Brand Strategy Rebranding -->
+<section class="max-w-6xl w-full px-12 py-24 border-t border-outline-variant/10">
+<div class="mb-16">
+<nav class="mb-12 inline-flex items-center gap-2">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">STRATEGY MODULE</span>
+<span class="w-4 h-[1px] bg-outline-variant/30"></span>
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">REBRANDING</span>
+</nav>
+<h2 class="text-[2.5rem] font-bold tracking-tight text-primary leading-tight mb-4">策略 - 文化IP定制 + 商业圈层经济</h2>
+<div class="w-24 h-1 bg-primary mb-16"></div>
+</div>
+<div class="grid grid-cols-2 gap-x-16 gap-y-12">
+<!-- 01 -->
+<div class="flex flex-col gap-4 p-8 bg-surface-container-low/20 rounded-xl border border-outline-variant/5">
+<span class="text-[0.625rem] font-black tracking-widest text-outline uppercase">Chapter 01</span>
+<h3 class="text-lg font-bold text-primary">品牌重构</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">围绕高端文化餐饮认知，对品牌定位、核心价值与整体表达进行重构，建立更清晰的品牌形象与差异化印象。</p>
+</div>
+<!-- 02 -->
+<div class="flex flex-col gap-4 p-8 bg-surface-container-low/20 rounded-xl border border-outline-variant/5">
+<span class="text-[0.625rem] font-black tracking-widest text-outline uppercase">Chapter 02</span>
+<h3 class="text-lg font-bold text-primary">场景叙事</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">以沉浸式东方美学为体验主线，梳理空间、服务与内容触点之间的叙事关系，提升整体场景感知与记忆点。</p>
+</div>
+<!-- 03 -->
+<div class="flex flex-col gap-4 p-8 bg-surface-container-low/20 rounded-xl border border-outline-variant/5">
+<span class="text-[0.625rem] font-black tracking-widest text-outline uppercase">Chapter 03</span>
+<h3 class="text-lg font-bold text-primary">社交增值</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">赋予餐饮消费之外的商业连接与社交属性，使品牌在宴请、圈层互动与关系经营中释放更高附加价值。</p>
+</div>
+<!-- 04 -->
+<div class="flex flex-col gap-4 p-8 bg-surface-container-low/20 rounded-xl border border-outline-variant/5">
+<span class="text-[0.625rem] font-black tracking-widest text-outline uppercase">Chapter 04</span>
+<h3 class="text-lg font-bold text-primary">IP化运营</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed">围绕品牌主题持续沉淀可传播、可延展的内容资产，推动品牌从单次表达走向可持续运营的IP化体系.</p>
+</div>
+</div>
+</section>
+<!-- Section 3: Strategic Roadmap (Process) -->
+<section class="max-w-6xl w-full px-12 py-24 border-t border-outline-variant/10">
+<div class="mb-20 text-center">
+<nav class="mb-10 inline-flex items-center gap-2">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">CASE STUDY // STRATEGIC ROADMAP // 01</span>
+</nav>
+<h2 class="text-[4rem] font-bold tracking-tight text-primary leading-tight">品牌升级与落地推进路径</h2>
+</div>
+<div class="grid grid-cols-4 gap-6 relative">
+<!-- Phase 01 -->
+<div class="space-y-6">
+<div class="flex items-baseline gap-4 mb-4 border-b border-outline-variant pb-4">
+<span class="text-5xl font-bold text-surface-container-highest tracking-tighter">01</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">PHASE 01</span>
+</div>
+<div class="roadmap-card bg-surface-container-low/30 rounded-xl p-8 min-h-[400px]">
+<h3 class="text-xl font-bold mb-1">现状诊断</h3>
+<p class="text-xs text-secondary mb-8">第1-2周</p>
+<ul class="space-y-6">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">fact_check</span>
+<span class="text-sm text-on-surface-variant font-medium">梳理现有服务形态与物料使用</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">groups</span>
+<span class="text-sm text-on-surface-variant font-medium">客户结构深度剖析</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">forum</span>
+<span class="text-sm text-on-surface-variant font-medium">收集多维度市场反馈</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">inventory_2</span>
+<span class="text-sm text-on-surface-variant font-medium">存量品牌资产评估</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Phase 02 -->
+<div class="space-y-6">
+<div class="flex items-baseline gap-4 mb-4 border-b border-outline-variant pb-4">
+<span class="text-5xl font-bold text-surface-container-highest tracking-tighter">02</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">PHASE 02</span>
+</div>
+<div class="roadmap-card bg-surface-container-low/30 rounded-xl p-8 min-h-[400px]">
+<h3 class="text-xl font-bold mb-1">定位梳理</h3>
+<p class="text-xs text-secondary mb-8">第3-4周</p>
+<ul class="space-y-6">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">person_search</span>
+<span class="text-sm text-on-surface-variant font-medium">明确目标客群与需求层次</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">star</span>
+<span class="text-sm text-on-surface-variant font-medium">锁定服务差异点与竞争优势</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">auto_awesome</span>
+<span class="text-sm text-on-surface-variant font-medium">定义品牌核心调性</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">record_voice_over</span>
+<span class="text-sm text-on-surface-variant font-medium">统一对外表达逻辑与关键词</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Phase 03 -->
+<div class="space-y-6">
+<div class="flex items-baseline gap-4 mb-4 border-b border-outline-variant pb-4">
+<span class="text-5xl font-bold text-surface-container-highest tracking-tighter">03</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">PHASE 03</span>
+</div>
+<div class="roadmap-card bg-surface-container-low/30 rounded-xl p-8 min-h-[400px]">
+<h3 class="text-xl font-bold mb-1">体系搭建</h3>
+<p class="text-xs text-secondary mb-8">第5-8周</p>
+<ul class="space-y-6">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">palette</span>
+<span class="text-sm text-on-surface-variant font-medium">统一品牌应用物料与规范手册</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">architecture</span>
+<span class="text-sm text-on-surface-variant font-medium">宴会提案结构化升级</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">forum</span>
+<span class="text-sm text-on-surface-variant font-medium">优化服务表达与传播话术</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">settings_suggest</span>
+<span class="text-sm text-on-surface-variant font-medium">梳理服务流程标准</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Phase 04 -->
+<div class="space-y-6">
+<div class="flex items-baseline gap-4 mb-4 border-b border-outline-variant pb-4">
+<span class="text-5xl font-bold text-surface-container-highest tracking-tighter">04</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-secondary">PHASE 04</span>
+</div>
+<div class="roadmap-card bg-surface-container-low/30 rounded-xl p-8 min-h-[400px] relative">
+<h3 class="text-xl font-bold mb-1">项目落地</h3>
+<p class="text-xs text-secondary mb-8">第2个月起持续推进</p>
+<ul class="space-y-6">
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">apartment</span>
+<span class="text-sm text-on-surface-variant font-medium">推进主题宴会项目实地落地</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">photo_camera</span>
+<span class="text-sm text-on-surface-variant font-medium">发展品牌IP与特色内容场景</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">visibility</span>
+<span class="text-sm text-on-surface-variant font-medium">完善服务场景化呈现效果</span>
+</li>
+<li class="flex gap-3 items-start">
+<span class="material-symbols-outlined text-sm mt-1">insights</span>
+<span class="text-sm text-on-surface-variant font-medium">落地效果评估与动态优化</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Strategic Results (Appended Content) -->
+<section class="max-w-6xl w-full px-12 py-32 border-t border-outline-variant/10">
+<div class="mb-20">
+<nav class="mb-10 inline-flex items-center gap-2">
+<span class="font-['Inter'] uppercase tracking-[0.2em] text-[10px] font-bold text-secondary">CASE 01 / RESULTS</span>
+</nav>
+<div class="flex justify-between items-end mb-4">
+<h2 class="text-[4rem] font-bold tracking-tight text-primary leading-tight">成果</h2>
+<div class="w-1/3 h-[1px] bg-outline-variant/30 mb-6"></div>
+</div>
+<p class="text-xl text-secondary font-medium">数据验证的品牌价值</p>
+</div>
+<!-- Result Cards Grid -->
+<div class="grid grid-cols-3 gap-6 mb-32">
+<!-- Card 1 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">5000万+</div>
+<p class="text-sm font-bold text-primary mb-12">年度GMV</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">ANNUAL GMV</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">87%</div>
+<p class="text-sm font-bold text-primary mb-12">高端客户占比</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">HIGH-END CLIENT PROPORTION</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">800场</div>
+<p class="text-sm font-bold text-primary mb-12">IP年举办</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">ANNUAL BRANDED IP EVENTS</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">620万</div>
+<p class="text-sm font-bold text-primary mb-12">招牌单品首月销售</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">SIGNATURE PRODUCT LAUNCH SALES</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">1万+</div>
+<p class="text-sm font-bold text-primary mb-12">首月新增会员</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">FIRST MONTH NEW MEMBERSHIP</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="result-card p-12 border border-outline-variant/5 shadow-sm">
+<div class="text-4xl font-bold mb-4 tracking-tight text-[#D4AF37]">8.2次</div>
+<p class="text-sm font-bold text-primary mb-12">年均复购</p>
+<div class="pt-8 border-t border-outline-variant/10">
+<span class="text-[10px] font-black tracking-widest text-outline uppercase">ANNUAL AVERAGE REPEAT PURCHASE</span>
+</div>
+</div>
+</div>
+<!-- Conclusion Image & Text -->
+<div class="space-y-16">
+<div class="aspect-[16/7] w-full bg-surface-container overflow-hidden rounded-sm grayscale">
+<img alt="Modern interior" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP066WyaJjQL8lUfDSK6YEQStjYK_zU7ojhVeb5CzLwsdBkKFRbh9ihIO16y0z0do0apDfCK2lHtXXkIaEk2kDU7wlUSJtwzYOGMACjih_66A9JzIw9iOWZiQvPR6QxSYOakeuNXWChXx1v0srOWlo09_8D3uw4MQU6_KHcXS_xo7tHXlACU42A7Y7l1OlPM27A5ZNY1f1UMeuFJz-MmxMfJXfSbsBh0Sqe7FuXhSp8l3xnWngI1NGH1KSAOeyICLS6kH2HzEC7aU"/>
+</div>
+<div class="max-w-4xl">
+<p class="text-lg text-on-surface-variant leading-loose font-medium">
+                    通过对“美佳时宴”品牌的深度解构与重组，我们不仅确立了其在高净值人群中的文化坐标，更通过数字化策略与线下体验的无缝融合，实现了品牌溢价与市场份额的双重爆发。这些数字背后，是品牌长期主义精神在商业语境下的精准着陆。
+                </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-neutral-50 dark:bg-neutral-950 py-12 px-8 md:px-16 mt-auto">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center border-t border-neutral-100 dark:border-neutral-900 pt-12">
+<div class="flex flex-col gap-2 mb-8 md:mb-0">
+<div class="text-xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-50 uppercase">NIHAOSHENG — PORTFOLIO 2026</div>
+<div class="font-sans text-xs uppercase tracking-widest text-neutral-400 dark:text-neutral-600">© 2026 NHS. 个人作品案例展示</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex gap-6 font-sans text-xs uppercase tracking-widest text-neutral-400 dark:text-neutral-600">
+<a class="hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors" href="#">Terms of Service</a>
+</div>
+<a class="bg-black text-white px-6 py-3 rounded-lg flex items-center gap-2 font-semibold text-sm tracking-widest hover:opacity-80 transition-all duration-300 active:scale-95" href="#">
+<span class="material-symbols-outlined text-lg leading-none">north</span>
+                回到顶部
+            </a>
+</div>
+</div>
+</footer>
+</body></html>

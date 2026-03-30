@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-fixed-dim": "#ababb0",
+              "on-primary-fixed-variant": "#e2e2e2",
+              "inverse-surface": "#2f3132",
+              "primary-fixed-dim": "#474747",
+              "on-tertiary-container": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#45474b",
+              "surface-dim": "#d9dadc",
+              "on-primary-container": "#ffffff",
+              "secondary": "#5e5e63",
+              "error": "#ba1a1a",
+              "on-background": "#1a1c1d",
+              "surface-tint": "#5e5e5e",
+              "on-tertiary-fixed": "#ffffff",
+              "on-surface": "#1a1c1d",
+              "primary-fixed": "#5e5e5e",
+              "background": "#f9f9fb",
+              "surface-container": "#eeeef0",
+              "on-surface-variant": "#474747",
+              "surface-container-highest": "#e2e2e4",
+              "primary-container": "#3b3b3b",
+              "outline-variant": "#c6c6c6",
+              "on-secondary-fixed-variant": "#3a3b40",
+              "surface-container-low": "#f3f3f5",
+              "error-container": "#ffdad6",
+              "outline": "#777777",
+              "secondary-fixed": "#c7c6cb",
+              "surface-variant": "#e2e2e4",
+              "surface": "#f9f9fb",
+              "on-tertiary": "#e2e2e7",
+              "on-error": "#ffffff",
+              "on-primary-fixed": "#ffffff",
+              "on-error-container": "#410002",
+              "tertiary-container": "#737479",
+              "secondary-container": "#d5d4d9",
+              "on-secondary-fixed": "#1a1b1f",
+              "tertiary": "#3a3b3f",
+              "primary": "#000000",
+              "surface-container-high": "#e8e8ea",
+              "inverse-primary": "#c6c6c6",
+              "inverse-on-surface": "#f0f0f2",
+              "surface-bright": "#f9f9fb",
+              "on-secondary-container": "#1a1b1f",
+              "tertiary-fixed": "#5d5e63",
+              "on-tertiary-fixed-variant": "#e2e2e7",
+              "on-primary": "#e2e2e2"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Updated TopNavBar from Shared Components -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-900 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center h-20 px-8 md:px-16 max-w-[1920px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-neutral-900 dark:text-neutral-50 cursor-pointer active:scale-95 transition-transform">N1CE DESIGN</div>
+<div class="hidden md:flex space-x-8 items-center font-sans antialiased tracking-tight text-sm font-medium"><a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">首页</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">个人介绍</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">工作经历</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-50 pb-1 transition-colors duration-300" href="#">作品案例</a>
+<a class="text-neutral-900 dark:text-neutral-50 border-b-2 border-neutral-900 dark:border-neutral-50 pb-1" href="#">联系方式</a></div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-neutral-900 dark:text-neutral-50 cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-40 pb-24 px-8 max-w-7xl mx-auto flex flex-col justify-center">
+<!-- Breadcrumb / Section Header -->
+<div class="mb-24">
+<span class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-secondary font-label">CONTACT</span>
+</div>
+<!-- Hero Content -->
+<div class="max-w-4xl mb-32">
+<h1 class="text-[3.5rem] font-bold leading-[1.1] tracking-[-0.04em] text-primary mb-8">感谢阅览</h1>
+<div class="text-[1.125rem] font-medium leading-[1.4] tracking-[-0.01em] text-secondary max-w-2xl">
+<p>本网页作品内容只作应聘投递展示</p>
+<p class="mt-4">期待加入您的企业共同创造更多价值</p>
+</div>
+</div>
+<!-- Information Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-16 items-start">
+<!-- Left Column: Structured Details -->
+<div class="space-y-12">
+<div class="group">
+<div class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-secondary mb-4 font-label">Wechat</div>
+<div class="text-[1.75rem] font-medium leading-[1.2] tracking-[-0.02em] text-on-surface">452678794</div>
+<div class="mt-6 h-[1px] w-12 bg-amber-400/30"></div>
+</div>
+<div class="group">
+<div class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-secondary mb-4 font-label">Tel</div>
+<div class="text-[1.75rem] font-medium leading-[1.2] tracking-[-0.02em] text-on-surface">13922432440</div>
+<div class="mt-6 h-[1px] w-12 bg-amber-400/30"></div>
+</div>
+<div class="group">
+<div class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-secondary mb-4 font-label">Add</div>
+<div class="text-[1.75rem] font-medium leading-[1.2] tracking-[-0.02em] text-on-surface">Guangzhou · Panyu</div>
+<div class="mt-6 h-[1px] w-12 bg-amber-400/30"></div>
+</div>
+</div>
+<!-- Right Column: QR Code Section -->
+<div class="flex flex-col items-start md:items-end">
+<div class="relative group">
+<!-- Minimalist Square Placeholder -->
+<div class="w-64 h-64 bg-surface-container-low flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:bg-surface-container-highest">
+<img alt="WeChat QR Code" class="w-48 h-48 group-hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida/ADBb0uiS7BWSbeNXQO0Fd6Dn4zEiSCFaqeMdBMvMT8b5LPftAag8hdss0cEh0vOGtQG3h6RLL-fAOynRjukVjJDHxGFog1iy0ikGIu01HTRqcE3_1s2Ksrkb8dkE2Kursx3yl-r3c8FevMPgTSpJTc_R5T4GCpCL8NjmhxVLBefKjTVj-AZzQb0EYke2jtAD4qPpa6GnOqstChCNU71ZRrGTXg2qh1O4KCKLrNgvLJgKueWdEBSbG-AZOcSIPqxLQxkKQEy8NR2wLkzwYg"/>
+</div>
+<!-- Label below QR -->
+<div class="mt-6 text-right">
+<p class="text-[0.75rem] font-bold tracking-[0.05em] uppercase text-secondary font-label">倪昊晟NIHAOSHENG</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer from Shared Components -->
+<footer class="w-full bg-surface border-t border-neutral-200/50 dark:border-neutral-800/50">
+<div class="max-w-7xl mx-auto px-8 py-20 flex flex-col md:flex-row justify-between items-end md:items-center gap-8">
+<div class="space-y-2">
+<div class="text-xl font-bold tracking-tighter text-primary uppercase">
+                NIHAOSHENG — PORTFOLIO 2026
+            </div>
+<div class="text-sm text-secondary font-medium">
+                © 2026 NHS. 个人作品案例展示
+            </div>
+</div>
+<div class="flex items-center">
+<button class="bg-black text-white px-6 py-3 flex items-center space-x-2 rounded-lg hover:bg-neutral-800 transition-colors group" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<span class="material-symbols-outlined text-sm">check</span>
+<span class="text-sm font-medium tracking-tight">期待合作</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>
