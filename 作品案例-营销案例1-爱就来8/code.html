@@ -1,0 +1,563 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>会员生命周期营销案例 - 深度解析</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', 'Noto+Sans+SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #737373;
+      font-weight: 600;
+    }
+  </style>
+<style data-purpose="layout-decorations">
+    .divider-line {
+      height: 1px;
+      background-color: #e5e5e5;
+      width: 100%;
+    }
+    .accent-line {
+      height: 2px;
+      background-color: #d4af37; /* Gold accent for headers */
+      width: 40px;
+    }
+    .grid-bg {
+      background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- Unified Navigation -->
+<style>
+.unified-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.unified-nav .nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.unified-nav .brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+}
+.unified-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.unified-nav .nav-item {
+  position: relative;
+}
+.unified-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+.unified-nav .nav-link:hover {
+  color: #000;
+}
+.unified-nav .nav-link.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom-color: #000;
+}
+.unified-nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+}
+.unified-nav .nav-item:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.unified-nav .dropdown-group {
+  padding: 0.75rem 1.5rem;
+}
+.unified-nav .dropdown-group-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+.unified-nav .dropdown-item-sub {
+  display: block;
+  padding: 0.375rem 0 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.unified-nav .dropdown-item-sub:hover {
+  color: #000;
+}
+.unified-nav .dropdown-item-sub.active {
+  color: #000;
+  font-weight: 600;
+}
+.unified-nav .has-sub::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+.unified-nav .mobile-toggle {
+  display: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .unified-nav .nav-container {
+    padding: 0 1rem;
+  }
+  .unified-nav .mobile-toggle {
+    display: block;
+  }
+  .unified-nav .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    gap: 0;
+  }
+  .unified-nav .nav-menu.open {
+    display: flex;
+  }
+  .unified-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+  }
+  .unified-nav .nav-link.active {
+    border-left-color: #000;
+  }
+  .unified-nav .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: #fafafa;
+    border: none;
+    padding-left: 1rem;
+  }
+}
+</style>
+<nav class="unified-nav">
+<div class="nav-container">
+<a href="../index.html" class="brand">N1CE DESIGN</a>
+<div class="nav-menu">
+<div class="nav-item">
+<a href="../index.html" class="nav-link">Home 首页</a>
+</div>
+<div class="nav-item">
+<a href="../个人介绍/code.html" class="nav-link">About 个人介绍</a>
+</div>
+<div class="nav-item">
+<a href="../工作经历/code.html" class="nav-link">Work 工作经历</a>
+</div>
+<div class="nav-item">
+<a href="#" class="nav-link has-sub active">Portfolio 作品案例</a>
+<div class="dropdown">
+<div class="dropdown-group">
+<div class="dropdown-group-title">品牌案例</div>
+<a href="../作品案例-品牌案例1-华智术/code.html" class="dropdown-item-sub">华智术</a>
+<a href="../作品案例-品牌案例2-美佳/code.html" class="dropdown-item-sub">美佳时宴</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">品项案例</div>
+<a href="../作品案例-品项案例1-五形体龄刀/code.html" class="dropdown-item-sub">五形体龄刀</a>
+<a href="../作品案例-品项案例2-熟醉奄仔蟹/code.html" class="dropdown-item-sub">熟醉奄仔蟹</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">营销案例</div>
+<a href="code.html" class="dropdown-item-sub active">爱就来8</a>
+<a href="../作品案例-营销案例2-宋宴/code.html" class="dropdown-item-sub">宋宴</a>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="../联系方式/code.html" class="nav-link">Contact 联系方式</a>
+</div>
+</div>
+<div class="mobile-toggle">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<line x1="3" y1="6" x2="21" y2="6"></line>
+<line x1="3" y1="12" x2="21" y2="12"></line>
+<line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8">
+<!-- BEGIN: Section1_Background -->
+<section class="py-16" id="background">
+<div class="flex items-center gap-4 mb-8">
+<span class="section-label" style="">Background</span>
+<div class="accent-line"></div>
+</div>
+<h1 class="text-6xl font-bold mb-6" style="">客群生命周期营销案例 - 爱就来8</h1>
+<p class="text-xl text-neutral-500 mb-16" style="">以二十四节气驱动门店到店、会员教育与长期复购</p>
+<div class="grid grid-cols-4 gap-8 bg-neutral-50 p-10 border border-neutral-100 mb-20">
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">项目名称</p>
+<p class="font-medium" style="">爱AI就来8会员营销体系</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">所属品牌</p>
+<p class="font-medium" style="">华智术</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">类型</p>
+<p class="font-medium" style="">门店用户运营 / 会员生命周期营销</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">Timeline</p>
+<p class="font-medium" style="">2023 - 2024 Seasonal</p>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-7">
+<div class="aspect-video bg-neutral-900 overflow-hidden relative group">
+<img alt="Framework Overview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="配图1.png" style="">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 border border-white/20 rounded-full animate-pulse flex items-center justify-center">
+<div class="w-32 h-32 border border-white/40 rounded-full flex items-center justify-center">
+<div class="w-16 h-16 border border-white/60 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center text-xs text-neutral-400 italic">
+<span class="" style="">Figure 1.1: Sustainable Membership Lifecycle Marketing Framework</span>
+<div class="flex gap-4">
+<button class="hover:text-black" style="">←</button>
+<button class="hover:text-black" style="">→</button>
+</div>
+</div>
+<div class="mt-20">
+<div class="section-label mb-4" style="">02 / Core Insights</div>
+<h2 class="text-3xl font-bold mb-6" style="">核心洞察</h2>
+<div class="divider-line mb-8"></div>
+<p class="text-neutral-600 leading-relaxed" style="">
+              传统门店会员活动大多依赖临时促销、单次邀约或节点优惠，客户虽有兴趣，但缺乏稳定、周期性的到店理由，导致到店率、客户教育效率与后续复购频次都相对受限。相比一次性活动，门店更需要的是一套能够持续制造“为什么现在要来”的会员运营机制。
+            </p>
+</div>
+</div>
+<div class="col-span-5 space-y-16">
+<div data-purpose="background-logic">
+<div class="section-label mb-4" style="">01 / Background</div>
+<h2 class="text-3xl font-bold mb-6" style="">背景逻辑</h2>
+<p class="text-neutral-600 text-sm leading-relaxed" style="">
+              华智术以“顺时养生”为核心理念，强调遵循节律、按节气调理脊柱与身体状态，并通过节气对应的脊柱节段、器官系统与身体问题建立更具东方认知的健康管理表达。基于这一品牌理念，项目尝试将“二十四节气”转化为门店全年可持续运营的会员营销主线，让原本专业性较强的调理逻辑，变成客户易理解、易参与、易形成习惯的到店机制。
+            </p>
+</div>
+<div data-purpose="strategic-goals">
+<div class="section-label mb-4" style="">03 / Strategic Goals</div>
+<h2 class="text-3xl font-bold mb-6" style="">活动目标</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">01</span>
+<p class="text-sm text-neutral-700" style="">建立全年可持续复用的节气会员营销主线，形成稳定的门店活动节律</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">02</span>
+<p class="text-sm text-neutral-700" style="">通过“节气 - 脊柱 - 器官 - 身体问题”的对应关系，降低用户理解门槛，提升健康教育效率</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">03</span>
+<p class="text-sm text-neutral-700" style="">以固定活动日、免费体验与节气场景内容，提升会员到店率、活动参与度与主动复购意愿</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">04</span>
+<p class="text-sm text-neutral-700" style="">将单次门店活动升级为可长期运转的会员生命周期营销系统，沉淀可复用的方法论模板</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section1_Background -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section2_Roadmap -->
+<section class="py-16" id="roadmap">
+<div class="max-w-4xl">
+<span class="section-label" style="">Process</span>
+<h2 class="text-5xl font-bold mt-4 mb-6" style="">用户营销推进路径</h2>
+<p class="text-neutral-500 mb-20" style="">以节气内容为主线，围绕门店教育、固定邀约、到店体验与复购承接，形成从内容建立到长期运营的完整闭环。</p>
+<div class="space-y-32 ml-16 border-l border-neutral-100 pl-24 relative">
+<!-- Phase items as per Image 47 with adjusted spacing -->
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 01</div>
+<h3 class="text-2xl font-bold mb-6" style="">内容模型建立</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">以二十四节气作为全年会员营销主线，梳理每个节气对应的脊柱节段、器官系统、常见身体问题与调理重点，建立一套门店可持续复用的内容母体，让“顺时养生”从品牌理念转化为可执行的会员内容体系。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 02</div>
+<h3 class="text-2xl font-bold mb-6" style="">门店物料转化</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">将专业调理逻辑转化为用户易理解的门店表达，包括节气转盘、节气海报、知识话术、节气说明卡等，让“为什么此时要调理”“调理对应什么问题”变得更直观、更易传播。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 03</div>
+<h3 class="text-2xl font-bold mb-6" style="">活动节律建立</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">将每月 8-10 号设置为固定会员活动窗口，围绕当月节气开展主题专场，逐步培养会员对固定日期、固定主题、固定权益的认知，形成更稳定的到店习惯。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 04</div>
+<h3 class="text-2xl font-bold mb-6" style="">体验权益设计</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">在到店活动中叠加免费体验脊柱体验、节气水果、节气茶饮与互动讲解内容，让会员活动从单纯优惠促销，升级为“教育 + 体验 + 服务”的综合型门店场景。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 05</div>
+<h3 class="text-2xl font-bold mb-6" style="">会员分层承接</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">围绕新客、活跃会员、沉睡会员与重点客户，设计不同的邀约理由、参与权益与后续承接路径，让月度活动与长期会员管理真正连接起来。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 06</div>
+<h3 class="text-2xl font-bold mb-6" style="">复购闭环形成</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">通过节气主题内容、固定活动日期、门店互动装置与特色体验权益，推动用户从“被动邀约”转向“主动到店”，逐步形成会员教育、周期到店与长期复购的运营闭环。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section2_Roadmap -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section3_Mechanisms -->
+<section class="py-16" id="mechanisms">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="section-label" style="">Project Index / Strategic Framework</span>
+<h2 class="text-5xl font-bold mt-4" style="">用传统文化驱动用户粘性</h2>
+</div>
+<div class="bg-black text-white px-4 py-2 text-[10px] tracking-widest uppercase" style="">Confidential Asset</div>
+</div>
+<p class="text-2xl text-neutral-400 mb-16 max-w-2xl italic leading-snug" style="">不是做一次活动，而是建立一套让会员持续理解、持续到店、持续复购的门店营销系统。</p>
+<div class="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200">
+<!-- Card 01 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Strategy Focus</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">01 节气内容化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">以二十四节气作为全年内容主线，把抽象的养生理念转化为门店每月都有主题、每月都有理由的会员沟通内容，使用户自然形成“到这个时间就该来”的认知。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Content Assets" class="w-full h-full object-cover" src="配图2.png" style="">
+</div>
+</div>
+<!-- Card 02 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Spatial Design</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">02 专业教育化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">将“节气 - 脊柱 - 器官 - 症状 - 调理方案”的专业关系做成用户可视化讲解模型，通过门店转盘、知识讲解与现场互动，大幅降低认知门槛，增强信任感与参与意愿。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Education Design" class="w-full h-full object-cover" src="配图3.jpg" style="">
+</div>
+</div>
+<!-- Card 03 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Operational Flow</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">03 到店节律化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">通过固定每月 8-10 号的会员活动，建立门店用户行为节律，把过去靠临时邀约驱动的到店行为，升级为具备周期性、习惯性的稳定到店机制。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Rhythm" class="w-full h-full object-cover" src="配图4.jpg" style="">
+</div>
+</div>
+<!-- Card 04 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Brand Equity</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">04 体验场景化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">将特殊调养体验、节气水果、节气茶饮、节气知识与门店空间氛围组合成一套完整体验，让活动不仅仅是邀约理由，更成为用户愿意停留、愿意理解、愿意复购的消费场景。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Experience" class="w-full h-full object-cover" src="配图05.png" style="">
+</div>
+</div>
+</div>
+<!-- Lifecycle Management -->
+<div class="mt-px bg-white p-12 border border-neutral-200">
+<div class="flex justify-between items-center mb-8">
+<span class="section-label" style="">Lifecycle Management</span>
+<svg class="w-6 h-6 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+</div>
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-6">
+<h3 class="text-2xl font-bold mb-6" style="">05 生命周期化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">围绕新客教育、老客复购、沉睡唤醒与高价值客户维护，形成不同阶段的内容触达与权益设计，让活动不止服务单月到店，而是服务全年用户关系经营。</p>
+</div>
+<div class="col-span-6 flex items-center">
+<div class="pl-12 border-l border-neutral-100 italic text-neutral-800" style="">
+              项目真正的核心，不是“借节气做活动”，而是“借节气建立用户持续回店的行为机制”。
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section3_Mechanisms -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section4_Results -->
+<section class="py-16 pb-32" id="results">
+<div class="flex justify-between items-center mb-12">
+<div>
+<span class="section-label" style="">Results</span>
+<h2 class="text-5xl font-bold mt-4" style="">项目价值</h2>
+</div>
+<div class="text-[10px] tracking-widest text-neutral-400" style="">STRATEGIC IMPACT ASSESSMENT</div>
+</div>
+<p class="text-2xl text-neutral-500 mb-20 max-w-3xl" style="">以节气会员机制连接用户教育、到店复购与门店增长，推动门店经营从“活动邀约”向“长期运营”升级。</p>
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-5 space-y-12">
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">01 / TRAFFIC</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">稳定到店</h3>
+<p class="text-sm text-neutral-500" style="">以每月固定节气活动窗口建立明确到店理由，降低临时邀约成本，提升门店客户回访与活动参与的稳定性。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">02 / EDUCATION</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">认知建立</h3>
+<p class="text-sm text-neutral-500" style="">将“节气 - 脊柱 - 器官 - 身体问题”的专业逻辑转化为用户易理解的内容模型，缩短客户教育路径，提升服务理解效率。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">03 / STICKINESS</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">用户粘性</h3>
+<p class="text-sm text-neutral-500" style="">通过节气调理、节气茶饮、水果体验与门店互动设计，增强客户对活动的期待感与参与感，推动用户形成周期性到店习惯。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">04 / CONVERSION</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">复购转化</h3>
+<p class="text-sm text-neutral-500" style="">把原本依赖单次活动刺激的消费行为，升级为围绕节气主题持续发生的体验与服务复购，提高会员留存与后续转化可能。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">05 / PRIVATE DOMAIN</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">私域沉淀</h3>
+<p class="text-sm text-neutral-500" style="">借助固定活动日与持续内容机制，将门店流量沉淀为可长期经营的会员与私域资产，提升门店后续运营的可触达性。</p>
+</div>
+</div>
+<div class="col-span-7 space-y-8">
+<div class="relative bg-neutral-900 aspect-[4/3] overflow-hidden rounded-sm shadow-2xl">
+<img alt="Visual Identity Case" class="w-full h-full object-cover opacity-90" src="配图6.png" style="">
+</div>
+<div class="bg-neutral-50 p-10 border border-neutral-200">
+<div class="flex items-center gap-3 mb-8">
+<svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
+<h4 class="font-bold text-lg uppercase tracking-wider" style=""><h4 class="font-bold text-lg uppercase tracking-wider cursor-text" spellcheck="false" data-stitch-added-classes="cursor-text" style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; outline: none !important;">营销成果 CAMPAIGN RESULTS</h4></h4>
+</div>
+<ol class="space-y-6 text-sm text-neutral-700 leading-relaxed">
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">1.</span>
+<span class="" style="">到店机制：以每月 8-10 号为固定会员活动窗口，建立门店稳定的月度到店节律，帮助客户从“被动邀约”逐步转向“主动关注”与“按时到店”。</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">2.</span>
+<span class="" style="">用户教育：围绕“小暑 - 脾胃 - 胸椎 T3-T4 调理”等节气逻辑，把原本复杂的专业调理知识转化为门店易讲、客户易懂、现场易记的用户教育内容，显著提升客户理解效率。</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">3.</span>
+<span class="" style="">体验粘性：通过节气转盘、免费特殊调养体验、节气水果与节气茶饮等设计，把会员活动从单纯促销转化为“教育 + 体验 + 服务”的综合场景，增强到店停留与复购意愿。</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">4.</span>
+<span class="" style="">经营价值：建立了“24节气内容体系 + 2年运营周期 + 每月固定活动日”的门店会员机制，为全门店运营、会员管理与长期业绩增长沉淀出可持续复用的经营模板。</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section4_Results -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="max-w-7xl mx-auto px-8 py-16 border-t border-neutral-100 flex justify-between items-center" data-purpose="global-footer">
+<div class="text-left">
+<p class="text-sm font-bold tracking-wider text-black mb-1" style="">NIHAOSHENG — PORTFOLIO 2026</p>
+<p class="text-xs text-neutral-400" style="">© 2026 NHS. 个人作品案例展示</p>
+</div>
+<button class="bg-black text-white px-6 py-3 rounded-md flex items-center gap-3 transition-transform hover:scale-105 active:scale-95" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="text-sm font-medium" style="">回到顶部</span>
+</button>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

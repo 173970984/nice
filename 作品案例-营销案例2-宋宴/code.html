@@ -1,0 +1,562 @@
+<!DOCTYPE html><html lang="zh-CN"><head><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>宋宴主题活动营销案例 - 深度解析</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style data-purpose="typography">
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+    
+    body {
+      font-family: 'Inter', 'Noto+Sans+SC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a1a;
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4 {
+      letter-spacing: -0.02em;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #737373;
+      font-weight: 600;
+    }
+  </style>
+<style data-purpose="layout-decorations">
+    .divider-line {
+      height: 1px;
+      background-color: #e5e5e5;
+      width: 100%;
+    }
+    .accent-line {
+      height: 2px;
+      background-color: #d4af37; /* Gold accent for headers */
+      width: 40px;
+    }
+    .grid-bg {
+      background-image: radial-gradient(#e5e5e5 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- Unified Navigation -->
+<style>
+.unified-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.unified-nav .nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.unified-nav .brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+}
+.unified-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.unified-nav .nav-item {
+  position: relative;
+}
+.unified-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+.unified-nav .nav-link:hover {
+  color: #000;
+}
+.unified-nav .nav-link.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom-color: #000;
+}
+.unified-nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+}
+.unified-nav .nav-item:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.unified-nav .dropdown-group {
+  padding: 0.75rem 1.5rem;
+}
+.unified-nav .dropdown-group-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+.unified-nav .dropdown-item-sub {
+  display: block;
+  padding: 0.375rem 0 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.unified-nav .dropdown-item-sub:hover {
+  color: #000;
+}
+.unified-nav .dropdown-item-sub.active {
+  color: #000;
+  font-weight: 600;
+}
+.unified-nav .has-sub::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+.unified-nav .mobile-toggle {
+  display: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .unified-nav .nav-container {
+    padding: 0 1rem;
+  }
+  .unified-nav .mobile-toggle {
+    display: block;
+  }
+  .unified-nav .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    gap: 0;
+  }
+  .unified-nav .nav-menu.open {
+    display: flex;
+  }
+  .unified-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+  }
+  .unified-nav .nav-link.active {
+    border-left-color: #000;
+  }
+  .unified-nav .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: #fafafa;
+    border: none;
+    padding-left: 1rem;
+  }
+}
+</style>
+<nav class="unified-nav">
+<div class="nav-container">
+<a href="../index.html" class="brand">N1CE DESIGN</a>
+<div class="nav-menu">
+<div class="nav-item">
+<a href="../index.html" class="nav-link">Home 首页</a>
+</div>
+<div class="nav-item">
+<a href="../个人介绍/code.html" class="nav-link">About 个人介绍</a>
+</div>
+<div class="nav-item">
+<a href="../工作经历/code.html" class="nav-link">Work 工作经历</a>
+</div>
+<div class="nav-item">
+<a href="#" class="nav-link has-sub active">Portfolio 作品案例</a>
+<div class="dropdown">
+<div class="dropdown-group">
+<div class="dropdown-group-title">品牌案例</div>
+<a href="../作品案例-品牌案例1-华智术/code.html" class="dropdown-item-sub">华智术</a>
+<a href="../作品案例-品牌案例2-美佳/code.html" class="dropdown-item-sub">美佳时宴</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">品项案例</div>
+<a href="../作品案例-品项案例1-五形体龄刀/code.html" class="dropdown-item-sub">五形体龄刀</a>
+<a href="../作品案例-品项案例2-熟醉奄仔蟹/code.html" class="dropdown-item-sub">熟醉奄仔蟹</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">营销案例</div>
+<a href="../作品案例-营销案例1-爱就来8/code.html" class="dropdown-item-sub">爱引来8</a>
+<a href="code.html" class="dropdown-item-sub active">宋宴</a>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="../联系方式/code.html" class="nav-link">Contact 联系方式</a>
+</div>
+</div>
+<div class="mobile-toggle">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<line x1="3" y1="6" x2="21" y2="6"></line>
+<line x1="3" y1="12" x2="21" y2="12"></line>
+<line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8">
+<!-- BEGIN: Section1_Background -->
+<section class="py-16" id="background">
+<div class="flex items-center gap-4 mb-8">
+<span class="section-label" style="">Background</span>
+<div class="accent-line"></div>
+</div>
+<h1 class="text-6xl font-bold mb-6" style="">IP圈层活动营销案例 - 宋宴</h1>
+<p class="text-xl text-neutral-500 mb-16" style="">以宋代美学为核心的沉浸式文化营销活动</p>
+<div class="grid grid-cols-4 gap-8 bg-neutral-50 p-10 border border-neutral-100 mb-20">
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">项目名称</p>
+<p class="font-medium" style="">宋宴</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">所属品牌</p>
+<p class="font-medium" style="">美佳时宴</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">类型</p>
+<p class="font-medium" style="">高端主题活动 / 文化营销活动</p>
+</div>
+<div>
+<p class="text-[10px] text-neutral-400 uppercase mb-2" style="">Timeline</p>
+<p class="font-medium" style="">2023 - 2024 Seasonal</p>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-7">
+<div class="aspect-video bg-neutral-900 overflow-hidden relative group">
+<img alt="Framework Overview" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" src="配图1.png" style="">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-48 h-48 border border-white/20 rounded-full animate-pulse flex items-center justify-center">
+<div class="w-32 h-32 border border-white/40 rounded-full flex items-center justify-center">
+<div class="w-16 h-16 border border-white/60 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center text-xs text-neutral-400 italic">
+<span class="" style="">Figure 1.1: Immersive Space Narrative for High-End Cultural Dining</span>
+<div class="flex gap-4">
+<button class="hover:text-black" style="">←</button>
+<button class="hover:text-black" style="">→</button>
+</div>
+</div>
+<div class="mt-20">
+<div class="section-label mb-4" style="">02 / Core Insights</div>
+<h2 class="text-3xl font-bold mb-6" style="">核心洞察</h2>
+<div class="divider-line mb-8"></div>
+<p class="text-neutral-600 leading-relaxed" style="">
+              传统高端餐饮往往侧重于食材与服务的堆砌，缺乏深度的情感联结与审美共鸣。在存量竞争时代，品牌需要从单纯的“产品交付”转向“审美与文化的价值交付”，通过构建具有东方气质的沉浸式场景，强化品牌在高端客户心智中的独特识别度。
+            </p>
+</div>
+</div>
+<div class="col-span-5 space-y-16">
+<div data-purpose="background-logic">
+<div class="section-label mb-4" style="">01 / Background</div>
+<h2 class="text-3xl font-bold mb-6" style="">背景逻辑</h2>
+<p class="text-neutral-600 text-sm leading-relaxed" style="">
+              基于美佳时宴在高端宴会领域的服务基础，项目以宋代文化与宋式美学为内容源点，围绕品牌差异化表达与圈层传播需求，打造兼具文化内容、空间审美与社交属性的主题营销活动IP，用一场具有东方气质的沉浸式体验，强化品牌在高端客户心智中的识别度与记忆点。
+            </p>
+</div>
+<div data-purpose="strategic-goals">
+<div class="section-label mb-4" style="">03 / Strategic Goals</div>
+<h2 class="text-3xl font-bold mb-6" style="">活动目标</h2>
+<div class="space-y-8">
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">01</span>
+<p class="text-sm text-neutral-700" style="">打造品牌差异化内容资产，建立美佳时宴“文化型高端活动”的品牌认知</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">02</span>
+<p class="text-sm text-neutral-700" style="">通过沉浸式场景与内容叙事提升客户体验感、参与感与传播意愿</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">03</span>
+<p class="text-sm text-neutral-700" style="">借助文化内容与艺术表达强化品牌溢价，推动圈层客户的认同与转介绍</p>
+</div>
+<div class="flex gap-6">
+<span class="font-bold border-b-2 border-yellow-400 h-fit" style="">04</span>
+<p class="text-sm text-neutral-700" style="">沉淀可复用的主题活动营销模型，为后续IP化传播与品牌活动运营提供方法论基础</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section1_Background -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section2_Roadmap -->
+<section class="py-16" id="roadmap">
+<div class="max-w-4xl">
+<span class="section-label" style="">Process</span>
+<h2 class="text-5xl font-bold mt-4 mb-6" style="">内容营销推进路径</h2>
+<p class="text-neutral-500 mb-20" style="">以“宋宴”IP为内容母体，围绕圈层种草、线下体验、私域沉淀与礼赠转化，形成从内容生产到商业兑现的完整营销闭环。</p>
+<div class="space-y-32 ml-16 border-l border-neutral-100 pl-24 relative">
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 01</div>
+<h3 class="text-2xl font-bold mb-6" style="">内容母题确认</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">围绕“宋代文化”“东方审美”“高端社交”三条核心线索，明确“宋宴”作为品牌内容IP的主叙事方向，建立活动的审美辨识度与传播母题。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 02</div>
+<h3 class="text-2xl font-bold mb-6" style="">内容素材搭建</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">将空间、器物、点茶、书画、抚琴、宴饮、礼品、人物互动等元素拆解为可拍摄、可传播、可复用的内容素材库，为后续社交传播与私域转化提供内容基础。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 03</div>
+<h3 class="text-2xl font-bold mb-6" style="">圈层传播引爆</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">通过邀请制体验、圈层客户参与、KOC/KOL种草、短视频与审美图文传播，制造高端圈层中的讨论度与分享欲，强化品牌的文化识别与社交属性。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 04</div>
+<h3 class="text-2xl font-bold mb-6" style="">私域承接转化</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">将活动现场流量与内容流量沉淀到品牌私域，通过邀约、社群、会员、企业礼赠咨询与产品推荐，承接后续成交机会，形成从体验到转化的连接链路。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 05</div>
+<h3 class="text-2xl font-bold mb-6" style="">产品联动成交</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">借助“宋宴”建立的高认知内容场景，带动熟醉奄仔蟹、礼盒、伴手礼及企业定制等产品的销售，实现“先内容种草、后产品成交”的营销转化。</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[105px] top-0 bg-white py-1 section-label text-neutral-400" style="">Phase 06</div>
+<h3 class="text-2xl font-bold mb-6" style="">资产沉淀复用</h3>
+<p class="text-neutral-500 text-sm leading-relaxed" style="">活动结束后继续沉淀视觉内容、活动影像、主题物料与传播话题，将一次性活动升级为可反复复用的品牌内容资产与长期营销抓手。</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section2_Roadmap -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section3_Mechanisms -->
+<section class="py-16" id="mechanisms">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="section-label" style="">Project Index / Strategic Framework</span>
+<h2 class="text-5xl font-bold mt-4" style="">以文化为核心闭环营销</h2>
+</div>
+<div class="bg-black text-white px-4 py-2 text-[10px] tracking-widest uppercase" style="">Confidential Asset</div>
+</div>
+<p class="text-2xl text-neutral-400 mb-16 max-w-2xl italic leading-snug" style="">以宋代美学为核心的沉浸式文化宴会策划。</p>
+<div class="grid grid-cols-2 gap-px bg-neutral-200 border border-neutral-200">
+<!-- Card 01 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Strategy Focus</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">01 文化主题化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">以“宋代文化”作为内容母题，将品牌活动从常规宴会服务升级为具有精神内核与审美识别度的文化营销表达。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Content Assets" class="w-full h-full object-cover" src="配图2.png" style="">
+</div>
+</div>
+<!-- Card 02 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Spatial Design</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">02 场景沉浸化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">围绕宅邸、空间、器物、茶席、艺术、表演与宴饮等维度，构建完整活动动线与体验层次，增强用户现场感知与品牌记忆。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Education Design" class="w-full h-full object-cover" src="配图3.png" style="">
+</div>
+</div>
+<!-- Card 03 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Operational Flow</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">03 内容仪式化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">将书画、香道、抚琴、点茶、瓷器、插花等文化元素转化为可参与、可拍摄、可传播的仪式感体验，提升活动内容的社交传播属性。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Rhythm" class="w-full h-full object-cover" src="配图4.png" style="">
+</div>
+</div>
+<!-- Card 04 -->
+<div class="bg-white p-12 space-y-8">
+<div class="flex justify-between items-start">
+<span class="section-label" style="">Brand Equity</span>
+<svg class="w-5 h-5 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+</div>
+<h3 class="text-2xl font-bold" style="">04 品牌IP化</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">将“宋宴”打造为兼具主题识别、视觉风格与传播价值的品牌活动IP，形成可持续复用的内容资产与营销抓手。</p>
+<div class="aspect-video bg-neutral-100 overflow-hidden">
+<img alt="Experience" class="w-full h-full object-cover" src="配图5.jpg" style="">
+</div>
+</div>
+</div>
+<!-- Lifecycle Management -->
+<div class="mt-px bg-white p-12 border border-neutral-200">
+<div class="flex justify-between items-center mb-8">
+<span class="section-label" style="">Internal Classification</span>
+<svg class="w-6 h-6 text-neutral-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+</div>
+<div class="grid grid-cols-12 gap-12">
+<div class="col-span-6">
+<h3 class="text-2xl font-bold mb-6" style="">05 资产化复用</h3>
+<p class="text-sm text-neutral-500 leading-relaxed" style="">活动结束后继续沉淀视觉内容、活动影像、主题物料与传播话题，将一次性活动升级为可反复复用的品牌内容资产与长期营销抓手。</p>
+</div>
+<div class="col-span-6 flex items-center">
+<div class="pl-12 border-l border-neutral-100 italic text-neutral-800" style="">
+              项目核心：为品牌沉淀文化资产与商业模型，实现从单纯餐饮到高端社交场景的资产化跃迁。
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section3_Mechanisms -->
+<div class="divider-line my-12"></div>
+<!-- BEGIN: Section4_Results -->
+<section class="py-16 pb-32" id="results">
+<div class="flex justify-between items-center mb-12">
+<div>
+<span class="section-label" style="">Results</span>
+<h2 class="text-5xl font-bold mt-4" style="">项目价值</h2>
+</div>
+<div class="text-[10px] tracking-widest text-neutral-400" style="">STRATEGIC IMPACT ASSESSMENT</div>
+</div>
+<p class="text-2xl text-neutral-500 mb-20 max-w-3xl" style="">为品牌沉淀文化资产与商业模型，实现从单纯餐饮到高端社交场景的资产化跃迁。</p>
+<div class="grid grid-cols-12 gap-16">
+<div class="col-span-5 space-y-12">
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">01 / ENGAGEMENT</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">圈层种草</h3>
+<p class="text-sm text-neutral-500" style="">提升高端客户对品牌的审美记忆与文化认知，精准触达目标客群。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">02 / CONTENT</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">内容资产</h3>
+<p class="text-sm text-neutral-500" style="">沉淀可复用的活动影像、视觉内容与传播母题，丰富品牌内涵。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">03 / CONVERSION</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">私域沉淀</h3>
+<p class="text-sm text-neutral-500" style="">将活动流量转入会员、社群与后续礼赠咨询，构建长效经营链路。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">04 / REVENUE</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">产品转化</h3>
+<p class="text-sm text-neutral-500" style="">带动熟醉奄仔蟹礼盒、伴手礼与企业定制需求，实现品效合一。</p>
+</div>
+<div data-purpose="result-item">
+<div class="flex items-center gap-4 mb-2">
+<span class="text-[10px] font-bold text-neutral-400" style="">05 / EQUITY</span>
+<div class="h-px flex-grow bg-neutral-100"></div>
+</div>
+<h3 class="font-bold mb-2" style="">品牌溢价</h3>
+<p class="text-sm text-neutral-500" style="">强化“文化型高端活动品牌”的价值感，支撑品牌高端市场定位。</p>
+</div>
+</div>
+<div class="col-span-7 space-y-8">
+<div class="relative bg-neutral-900 aspect-[4/3] overflow-hidden rounded-sm shadow-2xl">
+<img alt="Visual Identity Case" class="w-full h-full object-cover opacity-90" src="配图6.jpg" style="">
+</div>
+<div class="bg-neutral-50 p-10 border border-neutral-200">
+<div class="flex items-center gap-3 mb-8">
+<svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>
+<h4 class="font-bold text-lg uppercase tracking-wider" style="">营销成果 CAMPAIGN RESULTS</h4>
+</div>
+<ol class="space-y-6 text-sm text-neutral-700 leading-relaxed">
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">1.</span>
+<span class="" style="">圈层触达：通过定向邀约与口碑传播，精准触达 1,200+ 高净值潜力客群；</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">2.</span>
+<span class="" style="">品牌转化：活动期内带动核心产品销售增长 35%，品牌溢价认知显著提升；</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">3.</span>
+<span class="" style="">传播声量：自媒体曝光量累计 15w+，KOL/KOC 种草内容互动率提升 220%；</span>
+</li>
+<li class="flex gap-4" style="">
+<span class="font-mono text-neutral-400" style="">4.</span>
+<span class="" style="">资产价值：成功沉淀 1 套完整的文化宴会 SOP 营销模板与 300+ 份高质量视觉内容资产。</span>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Section4_Results -->
+</main>
+<!-- BEGIN: MainFooter -->
+<footer class="max-w-7xl mx-auto px-8 py-16 border-t border-neutral-100 flex justify-between items-center">
+<div class="flex flex-col gap-1">
+<div class="text-sm font-bold tracking-widest uppercase text-neutral-900" style="">NIHAOSHENG — PORTFOLIO 2026</div>
+<div class="text-[10px] tracking-widest text-neutral-400 uppercase" style="">© 2026 NHS. 个人作品案例展示</div>
+</div>
+<button class="bg-black text-white px-6 py-3 rounded-md text-xs font-semibold tracking-widest uppercase flex items-center gap-2 hover:bg-neutral-800 transition-colors" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="">
+<span class="material-symbols-outlined text-sm" style="">arrow_upward</span>
+    回到顶部
+  </button>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

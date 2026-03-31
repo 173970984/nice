@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Executive Portfolio - Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#1a1b1f",
+              "outline": "#777777",
+              "surface-dim": "#d9dadc",
+              "tertiary-fixed-dim": "#45474b",
+              "surface-tint": "#5e5e5e",
+              "surface": "#f9f9fb",
+              "primary": "#000000",
+              "surface-container-low": "#f3f3f5",
+              "surface-container": "#eeeef0",
+              "on-error": "#ffffff",
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed": "#ffffff",
+              "tertiary-fixed": "#5d5e63",
+              "surface-variant": "#e2e2e4",
+              "tertiary": "#3a3b3f",
+              "primary-container": "#3b3b3b",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed-variant": "#e2e2e2",
+              "on-tertiary": "#e2e2e7",
+              "secondary-fixed": "#c7c6cb",
+              "inverse-on-surface": "#f0f0f2",
+              "error": "#ba1a1a",
+              "on-tertiary-container": "#ffffff",
+              "on-secondary-container": "#1a1b1f",
+              "secondary": "#5e5e63",
+              "on-primary": "#e2e2e2",
+              "inverse-surface": "#2f3132",
+              "secondary-container": "#d5d4d9",
+              "on-error-container": "#410002",
+              "surface-container-high": "#e8e8ea",
+              "on-tertiary-fixed": "#ffffff",
+              "on-surface-variant": "#474747",
+              "on-surface": "#1a1c1d",
+              "surface-container-highest": "#e2e2e4",
+              "tertiary-container": "#737479",
+              "secondary-fixed-dim": "#ababb0",
+              "primary-fixed-dim": "#474747",
+              "on-secondary-fixed-variant": "#3a3b40",
+              "error-container": "#ffdad6",
+              "on-tertiary-fixed-variant": "#e2e2e7",
+              "on-background": "#1a1c1d",
+              "on-primary-container": "#ffffff",
+              "background": "#f9f9fb",
+              "surface-container-lowest": "#ffffff",
+              "surface-bright": "#f9f9fb",
+              "primary-fixed": "#5e5e5e",
+              "outline-variant": "#c6c6c6"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .wide-container {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+<!-- Unified Navigation -->
+<style>
+.unified-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.unified-nav .nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.unified-nav .brand {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  text-decoration: none;
+}
+.unified-nav .nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.unified-nav .nav-item {
+  position: relative;
+}
+.unified-nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+.unified-nav .nav-link:hover {
+  color: #000;
+}
+.unified-nav .nav-link.active {
+  color: #000;
+  font-weight: 600;
+  border-bottom-color: #000;
+}
+.unified-nav .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+}
+.unified-nav .nav-item:hover > .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.unified-nav .dropdown-group {
+  padding: 0.75rem 1.5rem;
+}
+.unified-nav .dropdown-group-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+.unified-nav .dropdown-item-sub {
+  display: block;
+  padding: 0.375rem 0 0.375rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.unified-nav .dropdown-item-sub:hover {
+  color: #000;
+}
+.unified-nav .dropdown-item-sub.active {
+  color: #000;
+  font-weight: 600;
+}
+.unified-nav .has-sub::after {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-right: 1.5px solid currentColor;
+  border-top: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: 0.5rem;
+  opacity: 0.5;
+}
+.unified-nav .mobile-toggle {
+  display: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .unified-nav .nav-container {
+    padding: 0 1rem;
+  }
+  .unified-nav .mobile-toggle {
+    display: block;
+  }
+  .unified-nav .nav-menu {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    gap: 0;
+  }
+  .unified-nav .nav-menu.open {
+    display: flex;
+  }
+  .unified-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+  }
+  .unified-nav .nav-link.active {
+    border-left-color: #000;
+  }
+  .unified-nav .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: #fafafa;
+    border: none;
+    padding-left: 1rem;
+  }
+}
+</style>
+<nav class="unified-nav">
+<div class="nav-container">
+<a href="../index.html" class="brand">N1CE DESIGN</a>
+<div class="nav-menu">
+<div class="nav-item">
+<a href="../index.html" class="nav-link">Home 首页</a>
+</div>
+<div class="nav-item">
+<a href="../个人介绍/code.html" class="nav-link">About 个人介绍</a>
+</div>
+<div class="nav-item">
+<a href="code.html" class="nav-link active">Work 工作经历</a>
+</div>
+<div class="nav-item">
+<a href="#" class="nav-link has-sub">Portfolio 作品案例</a>
+<div class="dropdown">
+<div class="dropdown-group">
+<div class="dropdown-group-title">品牌案例</div>
+<a href="../作品案例-品牌案例1-华智术/code.html" class="dropdown-item-sub">华智术</a>
+<a href="../作品案例-品牌案例2-美佳/code.html" class="dropdown-item-sub">美佳时宴</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">品项案例</div>
+<a href="../作品案例-品项案例1-五形体龄刀/code.html" class="dropdown-item-sub">五形体龄刀</a>
+<a href="../作品案例-品项案例2-熟醉奄仔蟹/code.html" class="dropdown-item-sub">熟醉奄仔蟹</a>
+</div>
+<div class="dropdown-group">
+<div class="dropdown-group-title">营销案例</div>
+<a href="../作品案例-营销案例1-爱就来8/code.html" class="dropdown-item-sub">爱就来8</a>
+<a href="../作品案例-营销案例2-宋宴/code.html" class="dropdown-item-sub">宋宴</a>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="../联系方式/code.html" class="nav-link">Contact 联系方式</a>
+</div>
+</div>
+<div class="mobile-toggle">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<line x1="3" y1="6" x2="21" y2="6"></line>
+<line x1="3" y1="12" x2="21" y2="12"></line>
+<line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+</div>
+</div>
+</nav>
+<main class="pt-48 pb-32 wide-container px-12 md:px-20">
+<!-- Header Section: Cinematic Intent -->
+<header class="mb-32">
+<div class="space-y-8">
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.2em] uppercase" style="">精选经历 / Selected Work</span>
+<h1 class="font-extrabold tracking-[-0.05em] leading-[0.95] text-primary text-[3rem] lg:text-[4rem]" style="">工作经历</h1>
+<div class="flex items-center gap-6 text-secondary text-[1.25rem] font-medium tracking-tight">
+<span class="" style="">品牌战略</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+<span class="" style="">增长落地</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant/40"></span>
+<span class="" style="">业务转型</span>
+</div>
+</div>
+</header>
+<!-- Main Content: Featured Experience Grid -->
+<div class="space-y-48">
+<!-- Module 1: Huawei Shu -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+<div class="lg:col-span-4 sticky top-40">
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-on-surface" style="">华之术（广州）智能科技有限公司</h2>
+<p class="text-secondary font-bold uppercase tracking-widest text-[0.875rem]" style="">智能科技 / 健康</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-primary pl-6 py-2">
+<span class="text-primary font-black text-[1.25rem]" style="">品牌总监</span>
+<span class="text-secondary font-medium text-[1rem]" style="">2022.11 - 2025.10</span>
+</div>
+<div class="pt-8">
+<p class="text-on-surface-variant text-[1.125rem] leading-relaxed max-w-md" style="">主导品牌战略升级与体系重构，围绕 AI 健康科技方向，明确主品牌“华智术”及各项目、产品线定位，推动品牌从单一业务叙事升级为“技术 + 服务 + 产品”一体化矩阵。</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-16">
+<!-- Large Metrics Grid -->
+<div class="grid grid-cols-2 gap-6 lg:gap-8">
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">3000万+</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">品牌渠道代理订单额</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">1000万</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">获钟南山旗下南山创投基金入股</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">政企合作</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">达成省市级政府项目合作</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">国家高新</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">获评国家高新技术企业</span></div>
+</div>
+<div class="bg-surface-container-lowest p-12 lg:p-16 rounded-2xl space-y-10 border border-outline-variant/15">
+<h3 class="text-secondary text-[0.875rem] font-bold tracking-[0.2em] uppercase" style="">核心职责与成果 Core Impact</h3>
+<ul class="space-y-8">
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">构建集团品牌资产库，统一 VI/SI 视觉识别系统，实现多渠道品牌一致性表达。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">主导年度新品发布会（Product Launch），负责从产品 definition、卖点拆解到传播执行的全链路闭环。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">搭建私域流量运营体系，结合 AI 健康数据服务，提升用户生命周期价值（LTV）。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">策划并执行“智能健康”系列 IP 活动，通过公私域联运实现 18.7% 的高效订单转化。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">统筹外部媒介资源及 MCN 机构，构建品牌声量场，支撑千万级业务增长目标。</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Module 2: Guangzhou Kangdian -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+<div class="lg:col-span-4 sticky top-40">
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-on-surface" style="">广州康点餐饮管理有限公司</h2>
+<p class="text-secondary font-bold uppercase tracking-widest text-[0.875rem]" style="">餐饮 / 活动策划</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-primary pl-6 py-2">
+<span class="text-primary font-black text-[1.25rem]" style="">品牌总监</span>
+<span class="text-secondary font-medium text-[1rem]" style="">2019.7 - 2022.10</span>
+</div>
+<div class="pt-8">
+<p class="text-on-surface-variant text-[1.125rem] leading-relaxed max-w-md" style="">主导公司由传统外餐定制服务向“高端宴会 + 商业资源活动 + 圈层社交晚宴 + 新零售”转型，打造差异化高端宴会品牌矩阵。</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8 space-y-16">
+<!-- Large Metrics Grid -->
+<div class="grid grid-cols-2 gap-6 lg:gap-8">
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">5000万+</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">年度 GMV</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">87%</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">高端客户占比</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">800场</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">IP 年活动</span></div>
+<div class="bg-white p-10 lg:p-14 border border-zinc-100 shadow-sm rounded-xl"><span class="block text-primary font-black tracking-tight leading-none text-[2rem] lg:text-[2.75rem]" style="">620万</span>
+<span class="text-secondary text-[0.875rem] font-bold tracking-[0.1em] uppercase mt-4 block" style="">首月销售</span></div>
+</div>
+<div class="bg-surface-container-lowest p-12 lg:p-16 rounded-2xl space-y-10 border border-outline-variant/15">
+<h3 class="text-secondary text-[0.875rem] font-bold tracking-[0.2em] uppercase" style="">核心职责与成果 Core Impact</h3>
+<ul class="space-y-8">
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">成功实施业务转型战略，将服务范畴延伸至圈层社交与商业资源对接，实现高净值人群精准覆盖。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">策划“文化主题宴会”概念，提升品牌文化溢价，驱动年度 GMV 突破 5000 万规模。</p>
+</li>
+<li class="flex items-start gap-6 group" style="">
+<span class="text-primary text-[1rem] font-black mt-1" style="">/</span>
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">建立品牌 IP 矩阵，年均执行超 800 场大型高端宴会，构建了极具竞争力的行业壁垒。</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Module 3: Guangzhou Aidiyi -->
+<section class="border-t border-zinc-200 pt-32">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
+<div class="lg:col-span-4">
+<div class="space-y-8">
+<div class="space-y-4">
+<h2 class="text-[2.5rem] font-bold tracking-[-0.03em] leading-[1.1] text-on-surface" style="">广州艾缔亿生物科技有限公司</h2>
+<p class="text-secondary font-bold uppercase tracking-widest text-[0.875rem]" style="">医美 / 生物技术</p>
+</div>
+<div class="flex flex-col gap-2 border-l-4 border-primary pl-6 py-2">
+<span class="text-primary font-black text-[1.25rem]" style="">品牌策划</span>
+<span class="text-secondary font-medium text-[1rem]" style="">2017.6 - 2019.7</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="bg-surface-container-lowest p-12 lg:p-16 rounded-2xl border border-outline-variant/15">
+<p class="text-on-surface text-[1.125rem] leading-[1.8]" style="">负责进口医美仪器和进口护肤品国内品牌搭建，市场营销，通过内容营销与 KOC 运营提升品牌在线上渠道的认知度，助力品牌完成初步市场下沉。</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="w-full border-t border-zinc-100 py-12 bg-white mt-auto"><div class="wide-container w-full flex justify-between items-center px-12 md:px-20">
+<div class="flex flex-col gap-1">
+<div class="text-[0.875rem] font-extrabold tracking-tight text-primary" style="">NIHAOSHENG — PORTFOLIO 2026</div>
+<div class="text-[0.75rem] font-medium text-secondary/60 uppercase tracking-wider" style="">© 2026 NHS. 个人作品案例展示</div>
+</div>
+<div>
+<a class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-zinc-800 transition-colors" href="#" style="">
+<span class="material-symbols-outlined text-[1.125rem]" style="">north</span>
+<span class="" style="">回到顶部</span>
+</a>
+</div>
+</div></footer></body></html>
